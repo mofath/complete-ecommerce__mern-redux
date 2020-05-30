@@ -1,0 +1,36 @@
+.form-container {
+    margin-top: 20px;
+}
+.login-btn{
+    background-color: #382110;
+    border: 1px solid #382110;
+    color: white;
+    border-radius: 3px;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 8px 12px;
+    width: 70px;
+} 
+
+br {
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: 5px; /* change this to whatever height you want it */
+}
+
+.login-input {
+    border: #DCD6CC 1px solid;
+    color: #333333;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    color: -internal-light-dark-color(black, white);
+    text-transform: none;
+    text-indent: 10px;
+    cursor: text;
+    padding: 1px 0px;
+    border-width: 2px;
+    border-style: inset;
+    width:220px;
+    height: 30px;
+}
