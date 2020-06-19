@@ -1,0 +1,14 @@
+.info{
+    width: 100%;
+}
+
+
+.description-text{
+    font-family: opensans,"Helvetica Neue",Helvetica,Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.info-title{
+    font-weight: bold;
+}

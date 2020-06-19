@@ -1,0 +1,20 @@
+
+
+.products-page-container{
+    padding: 30px;
+}
+
+.products-sidebar-wrapper{
+    background-color: #f5f5f5;
+}
+
+.products-main{
+    background-color: white;
+    left: 28%;
+    box-shadow: 0px 3px 8px rgb(100,100,100);
+}
+
+.products-sidebar-wrapper{
+    position: fixed;
+    left:2%;
+}

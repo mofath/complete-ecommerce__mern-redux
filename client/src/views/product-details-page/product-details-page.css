@@ -1,0 +1,26 @@
+.product-detail-wrapper{
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.product-gallery{
+    height:100%;
+}
+
+.product-info{
+    height:100%;
+}
+
+.main {
+    height: 1000px;
+}
+  
+.add-to-cart-sidebar {
+    height: 300px;
+    position: fixed;
+    right: 2%;
+}

@@ -8,6 +8,43 @@ const multer = require('multer');
 const DB_URL = 'mongodb://localhost:27017/online-shop'
 
 
+router.get('/', async (req, res) => {
+    console.log("hello");
+    
+    mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+        .then(() => console.log('succcessfully connected to mongodb'))
+        .catch(err => console.log(`DB Connection Error: ${err.message}`));
+
+    const products = await Product.find({});
+    try {
+        res.send(products);
+    } catch (err) {
+        res.status(500).send(err);
+    }
+});
+
+router.delete('/:id', async (req, res) => {
+    console.log("delete product");
+    
+    mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+    .then(() => console.log('succcessfully connected to mongodb'))
+    .catch(err => console.log(`DB Connection Error: ${err.message}`));
+
+    try {
+        const product = await Product.findByIdAndDelete(req.params.id)
+
+        if (product) {
+            return res.status(200).send("product deleted successfully")
+        } else {
+            return res.status(404).send("No such product");
+        }
+    } catch (err) {
+        res.status(500).send(err)
+    }
+})
+
+
+
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'uploads/')

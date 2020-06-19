@@ -1,0 +1,148 @@
+
+.cart-box{
+    /* width:100%; */
+    padding: 20px;
+    background-color:white;
+    border:solid 1px #d6d6d6;
+    border-radius: 5px;
+}
+
+/* ************************** frame ***************************** */
+
+
+.cart-box .body-section .productImg {
+    width:100%;
+    border: 1px solid #d7d7d7;
+    padding:1px;
+}
+
+/* ************************** details ***************************** */
+.cart-box .body-section .details {
+    width:30%;
+    margin-top: 10px;  
+}
+
+.details .title {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    font-family: ampersand_regular,gesstwolight-light,arial;
+    margin: 0;
+}
+
+.cart-box .body-section .price-value{
+    margin: auto;
+    display: block;
+    font-size: 16px;
+    color: #006fcc;
+    font-weight: 700;
+    font-family: opensans,"Helvetica Neue",Helvetica,Helvetica,Arial,sans-serif;
+}
+
+.cart-box .body-section .currency-text{
+    margin: auto;
+    font-size: 15px;
+    color: #006fcc;
+    font-weight: 500;
+    font-family: opensans,"Helvetica Neue",Helvetica,Helvetica,Arial,sans-serif;
+}
+
+.cart-box .body-section .detail-body{
+    margin: auto;
+    display: block;
+    font-size: 14px;
+    font-weight: 450;
+    color: #adadad;
+    font-family: ampersand_regular,gesstwolight-light,arial;
+}
+
+.cart-box  dd, .cart-box  dt {
+    font-size: 85%;
+    text-align: left;
+    font-family: opensans,"Helvetica Neue",Helvetica,Helvetica,Arial,sans-serif;
+    display: inline-block;
+}
+
+.cart-box dd {
+    color: #818181;
+    clear: right;
+    width: 30%;
+    font-weight: bold;
+}
+
+.cart-box dt {
+    color: #818181;
+    width: 30%;
+    /* font-weight: 400; */
+}
+
+dl{
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+/* ************************** control ***************************** */
+.cart-box.body-section.control{
+    width: 20%;
+}
+
+
+
+/* ***************** bottom section ******************** */
+.bottom-section.remove-btn{
+    color: #006fcc;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: ampersand_regular,gesstwolight-light, arial;
+    
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+
+    overflow: visible;
+    width: auto;
+}
+
+
+.bottom-section button.link {
+    color: #006fcc;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+ }
+
+
+ .price-tag{
+     margin-top: 10px;
+ }
+
+ .qty-block p,  .qty-block .qty-select {
+     display: inline;
+
+ }
+
+ .qty-select{
+    width:50%;
+    height: 30px;
+    text-align: left;
+    text-indent: left;
+    padding: 0px;
+    margin-left: 10px;
+}
+
+.cart-box{
+    -moz-box-shadow: 0px 3px 8px rgb(100,100,100);
+-webkit-box-shadow: 0px 3px 8px rgb(100,100,100);
+box-shadow: 0px 3px 8px rgb(100,100,100);
+}

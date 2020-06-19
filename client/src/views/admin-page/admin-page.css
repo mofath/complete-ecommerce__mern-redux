@@ -1,0 +1,51 @@
+
+.nav Tap.active{
+    background:red;
+}
+
+.admin-page-container{
+    background-color: #f5f5f5;
+    padding: 20px 0px;
+    padding: 0px 0px;
+}
+.admin-dashboard-header{
+    display: flix;
+    /* margin: 20px 0px; */
+    box-sizing:border-box;
+}
+
+.admin-dashboard-header h5{
+    color: #6f7173;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.admin-dashboard-header h6{
+    color: #bcbebf;
+    font-size: 13px;
+    font-weight: 450;
+}
+
+
+.admin-dashboard-header .logo{
+    width:50px;
+    height: 50px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    border: solid 1px #e3e5e7;
+    margin-right: 20px;
+    border-radius: 3px;
+    padding-top: 8px;
+    background-color: white;
+    box-shadow: 3px 3px 5px #e3e5e7;
+}
+
+.tabs-container{
+    background-color: white;  
+}
+
+.tabs-container .nav {
+    background-color: #f5f5f5;
+    padding: 0px 205px;
+}

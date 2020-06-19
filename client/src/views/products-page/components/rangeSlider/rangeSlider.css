@@ -1,0 +1,30 @@
+.myslider{
+  width:80%
+}
+.range-min{
+  float: left;
+  padding: 6px;
+  margin: 4px 4px 4px 4px ;
+  font-size: 17px;
+  background-color: #febd69;
+  border-radius: 5px;
+  font-weight: bold;
+  color: aliceblue;
+  text-shadow: 0.2 0.2px  #d29950, 0.2 0.2px #d29950, 0.2 0.2px  #d29950, 0.2 0.2px #d29950;
+  background-image: linear-gradient(to right, #d29950 , #febd69);
+}
+
+.range-max{
+  float: right;
+  padding: 6px;
+  margin: 4px 4px 4px 4px ;
+  font-size: 17px;
+  background-color: #febd69;
+  border-radius: 5px;
+  font-weight: bold;
+  color: aliceblue;
+  text-shadow: 0.2 0.2px  #d29950, 0.2 0.2px #d29950, 0.2 0.2px  #d29950, 0.2 0.2px #d29950;
+  background-image: linear-gradient(to left, #d29950 , #febd69);
+}
+
+

@@ -1,0 +1,71 @@
+.product-control-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5%;
+    align-items: center;
+    border: solid 1px #dddddd;
+    border-radius: 3px;
+}
+
+.add-btn{
+    background-image: linear-gradient(to bottom, #faecc8 , #f0c14c);
+    color:#111111;
+    cursor: pointer;  
+    font-family:Arial, Helvetica, sans-serif;  
+    font-weight: bold;
+    width:90%;
+    border: 1px solid #cb7e1b;
+    height:40px;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.info{
+    border-right: 0.5px solid #dddddd;
+    border-left: 0.5px solid #dddddd;
+    padding-right: 5%;
+    padding-left: 5%;
+    text-justify: distribute;
+}
+
+.dlv-sidebar-title{
+    font-weight: bold;
+    margin-bottom: 2px;
+    font-size: 15px;
+}
+
+.dlv-sidebar-header{
+ display: block;
+}
+.dlv-sidebar-header-text{
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 14px;
+    padding: 8px;
+    font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+    color: #282828;
+    direction: ltr;
+
+}
+
+.dlv-sidebar-text{
+    font-family: Roboto,-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 14px;
+    color: #282828;
+
+}
+
+.block-divider {
+    height: 20px;
+    border: 1px solid #f00 ;
+}
+
+.dlv-sidebar-block{
+    border-bottom: solid 1px #111111;
+    padding-bottom: 20px;
+    display: block;
+}

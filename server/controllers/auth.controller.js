@@ -5,7 +5,6 @@ const { jwtToken, comparePassword } = require('../utils/utils');
 const DB_URL = 'mongodb://localhost:27017/online-shop'
 
 const auth = {
-
     async signUp(req, res, next) {
         mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
             .then(() => console.log('succcessfully connected to mongodb'))

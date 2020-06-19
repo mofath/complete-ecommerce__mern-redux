@@ -1,0 +1,44 @@
+.oauth-social-icons-wrapper {
+    width: 280px;
+    height: 40px;
+    background: #131921;
+    border-radius: 7px 7px 0 0;
+    vertical-align: middle;
+}
+
+.oauth-text {
+    color: antiquewhite;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 12px;
+    margin-left: 15px;
+    margin-right: 5px;
+    display: inline;
+    vertical-align: middle;
+}
+
+.oauth-social-list {
+    padding:0;
+    display: inline;
+    list-style: none;
+}
+
+
+.oauth-item {
+    vertical-align: top;
+    display: inline;
+    vertical-align: middle;
+}
+
+.oauth-social-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.oauth-social-icon a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+

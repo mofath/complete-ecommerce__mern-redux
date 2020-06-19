@@ -1,0 +1,32 @@
+
+.msg {
+  background: #fff none repeat scroll 0 0;
+  border: 0.1rem solid #d9d9d9;
+  border-radius: 5px;
+  color: #404040;
+  font-family: "proxima-nova","Helvetica Neue","Helvetica","Arial",sans-serif;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+h4, .msg__title {
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 5px;
+}
+.msg--info {
+  background: #e0eef5 none repeat scroll 0 0;
+  border-color: #b3d4e6;
+  color: #1f5b7a;
+}
+.msg__title .fa {
+  margin-right: 10px;
+}
+.msg--has-icon .msg__bd {
+  margin-left: 34px;
+}
+
+.msg--error {
+  background: #fdc3c3 none repeat scroll 0 0;
+  border-color: #d98c8c;
+  color: #821717;
+}
