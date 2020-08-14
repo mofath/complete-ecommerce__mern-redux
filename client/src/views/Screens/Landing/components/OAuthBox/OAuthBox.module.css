@@ -1,0 +1,43 @@
+.OAuthBox {
+    width: 280px;
+    height: 40px;
+    background: #131921;
+    border-radius: 7px 7px 0 0;
+    vertical-align: middle;
+}
+
+.OAuthBox p {
+    color: antiquewhite;
+    font-size: 12px;
+    margin-left: 15px;
+    margin-right: 5px;
+    display: inline;
+    vertical-align: middle;
+}
+
+.OAuthBox ul {
+    padding:0;
+    display: inline;
+    list-style: none;
+}
+
+
+.OAuthBox ul li{
+    vertical-align: top;
+    display: inline;
+    vertical-align: middle;
+}
+
+.OAuthBox img {
+    width: 26px;
+    height: 26px;
+}
+
+.OAuthBox a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+

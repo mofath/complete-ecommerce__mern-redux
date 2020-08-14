@@ -1,0 +1,54 @@
+.CategoriesShow {
+    height: auto;
+    display: flex;
+    padding: 25px 25px 0px 25px;
+    background-color: white;
+}
+
+.CategoriesShow img{
+    width: 100%;
+    height: auto;
+    display: block; 
+    margin: 0px 0px;
+    margin-bottom: 5px;
+    box-sizing:border-box;
+}
+
+.Categories,
+.Banner
+{
+    flex:1;
+}
+
+.Banner
+{
+    margin-right: 20px;
+}
+
+.Categories a{
+    flex:1;
+    text-align: center;
+    text-decoration: none;
+    color: teal;
+    font-size: 20px;
+    border-top:none;
+    overflow:hidden;
+    margin-bottom: 0px;
+}
+
+.Categories a:first-child{
+    margin-right: 10px;
+}
+
+.Categories a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+
+@media all and (max-width: 768px) {
+    .category-show.horizontal-layout {
+      flex-direction: column;
+    }
+}
+

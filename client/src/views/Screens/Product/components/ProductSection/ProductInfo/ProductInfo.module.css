@@ -1,0 +1,27 @@
+.Info{
+    width: 95%;
+}
+
+.Info h3{
+    font-size: 22px;
+    padding-bottom: 10px;
+}
+
+.Info h4{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+
+.Info h5{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.Info h6{
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 0;
+}
+

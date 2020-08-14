@@ -1,0 +1,36 @@
+.DropZone{
+    border: dashed #dddddd;
+    background-color:#fcfcfc;
+    height: 280px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.DropZone:focus{
+    outline: none;
+}
+.DropZone button{
+    border-radius: 10px;
+    width:100px;
+    height: 30px;
+    border: solid 1px #82bc00;
+    outline: #82bc00;
+    color: #82bc00;
+    display: block;
+}
+.DropZone button:hover{
+    background-color: #82bc00;
+    color: cornsilk;
+    text-align: center;
+}
+.DropZone h5{
+    font-size: 15px;
+    color: #616161;
+    margin-top: 15px;
+}
+.DropZone p{
+    font-size: 10px;
+    color: #616161;
+    margin-top: 3px;
+}

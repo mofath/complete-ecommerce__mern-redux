@@ -1,0 +1,111 @@
+.HomeScreen{
+    display: flex;
+    background-color: #f5f5f5;
+}
+
+.Heading{
+    background-image: linear-gradient(to right, #d8d8d8, white, #d8d8d8);
+    height:400px;
+    box-sizing: border-box;
+    border-bottom:solid 0.5px #e9e3e3;
+}
+
+
+/* *************************start of sec01 *********************** */
+.Sec01{
+    padding: 15px 0px;
+    height:80px;
+    border-bottom: solid 0.1px #d8d0d0;
+}
+
+.LogoWrapper{
+    flex:7;
+    text-align: left;
+}
+
+.LoginWrapper{
+    flex:5;
+    text-align: left;
+}
+/* *************************end of sec01 *********************** */
+
+/* *************************start of sec02 *********************** */
+.Sec02{
+    display: flex;
+    height: auto;
+}
+.Mainbanner{
+    flex:2;
+    padding: 15px 0px;
+    text-align: left;
+    /* background-color: blue; */
+}
+
+.Mainbanner img{
+   width: 700px;
+   height: auto;
+}
+
+.SignupWrapper{
+    flex:1;
+    padding-top: 20px;
+    padding-left: 70px;
+    justify-content: space-between;
+    text-align: left;
+    height: 320px;
+    /* background-color: tomato; */
+}
+/* *************************end of sec02 *********************** */
+
+
+/* *************************start of sec03 sec04 *********************** */
+.Sec03{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.Sec04{
+    margin-bottom: 30px;
+}
+/* *************************End of sec03 sec04 *********************** */
+
+/* @media (max-width:767px){ */
+@media (max-width:767px){
+    .Heading{
+        flex-direction: column;
+        height: 450px;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        box-sizing: border-box;
+    }
+
+    .Sec01{
+        flex-direction: column;
+        padding-top: 0px; 
+        height: 140px;
+    }
+    .LogoWrapper{
+        height: 70px;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    .Sec02 {
+        height: 250px;
+        flex-direction: column;
+        padding-left: 0px;
+        padding-top: 20px;
+    }
+    .SignupWrapper{
+        width: 100%;
+        /* padding-left: 0px;
+        padding-top: 0px;
+        margin-top: 0px; */
+        /* float: left;     */
+        display: flex;
+        justify-content: space-between;
+    }
+    .DesktopOnly{
+        display: none;
+    }
+}

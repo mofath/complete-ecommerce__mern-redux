@@ -1,0 +1,54 @@
+ .ReviewForm{
+    display: flex;
+    align-items: flex-start;
+    text-align: start;
+    margin-bottom: 40px;
+    width: 81%;
+}
+
+
+
+.Form{
+  border: solid 1px #e8e8e8;
+  background-color: #f7f5fa;
+  padding: 0px 15px 10px 15px;
+}
+
+.Form input[type="radio"] {
+    display: none;
+}
+
+.Form textarea {
+    width: 100%;
+    text-indent: 5px;
+    padding-top: 7px;
+    border: none;
+    color: rgb(32, 32, 32);
+    font-size: 14px;
+    height: 50px;
+}
+.Form textarea:focus {
+    border: none;
+    outline: none;
+    height: 80px;
+}
+
+.Form button {
+    width: 80px;
+    height: 30px;
+    vertical-align: middle;
+    border-radius: 3px;
+    margin-top: 10px;
+    color: white;
+    background-color: #397fbb;
+    border: solid 1px #436c8d;
+    outline: none;
+    align-self: flex-end;
+  }
+
+  .TextContainer{
+    background-color: white;
+    border: solid 1px #e8e8e8;
+    padding: 5px 10px;
+    z-index: 1;
+  }

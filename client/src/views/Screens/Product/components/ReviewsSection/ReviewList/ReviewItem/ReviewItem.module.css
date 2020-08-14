@@ -1,0 +1,23 @@
+.ReviewItem {
+    background-color: #f7f5fa;
+    margin: 10px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.Content p  {
+   margin: 0px 0px;
+   padding:0px 0px;
+   text-align: left;
+}
+
+.Content p span {
+    color: #898480;
+    font-size: 12px;
+}
+
+.Content p:last-child {
+    margin-top: 10px;
+    color: #272e34;
+}

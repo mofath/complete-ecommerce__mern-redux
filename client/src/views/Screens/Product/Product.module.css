@@ -1,0 +1,19 @@
+.ProductScreen{
+    display: grid;
+    grid-template-columns: 75% auto;
+    grid-template-rows: auto;
+    grid-template-areas:  "main sidebar";
+    height: auto;
+
+    padding: 30px 5%;
+}
+
+.ProductScreen aside {
+    grid-area: sidebar;
+    margin-top: 10px;
+}
+
+.ProductScreen main {
+    grid-area: main;
+    display: flex;
+}

@@ -1,0 +1,39 @@
+
+.OrderItem{
+    background-color: #f8f8f9;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.OrderItem img{
+    width: 100px;
+    height: auto;
+}
+
+.OrderItem th,
+.OrderItem td
+{
+    padding: 10px 10px;
+    text-align:center;
+}
+.OrderItem td
+{
+    vertical-align: baseline;
+    color: #7c878e;
+    font-size: 14px;
+}
+.OrderItem th:first-child{
+    width: 120px;
+}
+.OrderItem th:nth-child(2),
+.OrderItem td:nth-child(1)
+{
+    padding: 10px 10px;
+    text-align:left;
+}
+.OrderItem td p{
+    margin-bottom: 0px;
+    padding: 0;
+    color: black;
+    font-size: 14px;
+}

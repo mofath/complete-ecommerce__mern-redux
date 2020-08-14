@@ -1,0 +1,56 @@
+
+.Msg {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: auto;
+  border-radius: 5px;
+  background-color: white;
+  align-self: center;
+  justify-self: center;
+}
+
+.Title  {
+  align-self: center;
+  justify-self: center;
+  padding: 20px 0px 10px 0px;
+}
+
+.Body {
+  align-self: center;
+  justify-self: center;
+  color: #0e1316;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.Body h5, h6{
+  align-self: center;
+  padding: 3px 0px;
+  margin: 0px 0px;
+}
+
+.Body p{
+  font-size: 15px;
+}
+
+.Btns{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Btns button {
+  background-color: #3085d6;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 3px 20px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.Btns button:nth-child(2) {
+  background-color: red;
+  margin-left: 10px;
+}

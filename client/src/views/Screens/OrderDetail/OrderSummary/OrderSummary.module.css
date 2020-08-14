@@ -1,0 +1,21 @@
+.OrderSummary{
+    background-color: white;
+    width: 100%;
+}
+
+.OrderSummary td{
+    text-align: right;
+}
+
+.OrderSummary td:first-child{
+    width: 85%;
+    text-align: right;
+}
+
+.OrderSummary tr:last-child td{
+    color: #1f49b6;
+    font-size: 16px;
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}

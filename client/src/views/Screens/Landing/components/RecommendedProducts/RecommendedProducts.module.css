@@ -1,0 +1,15 @@
+.Heading{
+    justify-content: space-between;
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+
+.Slider{
+    background-color: white;
+    border-radius:5px;
+    padding: 20px 0;
+}
+
+.Products {
+    margin: 0 10% 0 15%;
+}

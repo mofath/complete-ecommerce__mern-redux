@@ -1,0 +1,25 @@
+.Heading {
+    align-items: center;
+    height:70px;
+    padding-top: 15px;
+}
+ .Heading p{
+    float: left;
+    color: #566787;
+    font-size: 18px;
+    font-weight: bold;
+}
+ .Heading button {
+    background-color: #566787;
+    padding: 5px 15px;
+    float: right;
+    border:none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+.Heading button:last-child {
+    margin-right:10px;
+}

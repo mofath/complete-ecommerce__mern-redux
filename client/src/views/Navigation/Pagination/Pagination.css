@@ -1,0 +1,40 @@
+.paginaton-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.paginaton-container .counter{
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.paginaton-container .pagination-item {
+    list-style: none;
+}
+
+.paginaton-container .pagination-item button {
+    width: 13px;
+    height:25px;
+    font-weight: 500;
+    margin-right: 4px;
+    border-radius: 3px;
+    box-sizing: content-box;
+    border:none;
+}
+.paginaton-container .pagination-item .default-btn{
+    color: white;
+    background: linear-gradient(#02a2dd,#a5beed);
+}
+.paginaton-container .pagination-item .default-btn:hover{
+    color: white;
+    background: linear-gradient(#566787,#508cff);
+}
+.paginaton-container .pagination-item .active-btn {
+    background-color: rgb(229, 229, 229) !important;
+    cursor: not-allowed;
+    border: none;
+    background: #F5F5F5;
+    color : #C3C3C3;
+    cursor:none;
+    pointer-events: none;
+}

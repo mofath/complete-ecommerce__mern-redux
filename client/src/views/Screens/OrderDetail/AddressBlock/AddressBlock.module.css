@@ -1,0 +1,25 @@
+.AddressBlock{
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.AddressBlock div{
+    background-color: #f8f8f9;
+    width: 49%;
+    padding: 20px 30px;
+}
+
+.AddressBlock h4{
+    font-size: 15px;
+    padding-bottom: 10px;
+    font-weight: 600;
+    color: black;
+    align-self: flex-start;
+}
+.AddressBlock h5{
+    font-size: 11px;
+    font-weight: 400;
+    color: #7c878e;
+    margin: 0px 0px;
+    padding: 3px 0px;
+}

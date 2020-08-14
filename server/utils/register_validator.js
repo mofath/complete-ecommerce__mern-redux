@@ -1,5 +1,4 @@
 const validator = require('validator');
-const User = require('../models/user.model')
 
 module.exports = async (req, res, next) => {
     const {username, email, password} = req.body;

@@ -1,0 +1,23 @@
+.OrderItemTable {
+    width: 100%;
+    background-color: #f1eded;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.OrderItemTable th{
+    height: 30px;
+    font-size: 15px;
+    padding-top: 25px;
+    padding-bottom: 5px;
+    text-align: center;
+    color: #262e3e;
+
+}
+
+.OrderItemTable td{
+    font-size: 14px;
+    padding-bottom: 25px;
+    text-align: center;
+    color: gray;
+}

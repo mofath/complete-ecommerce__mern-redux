@@ -1,0 +1,18 @@
+.Modal {
+    width: auto;
+    height: auto;
+    position: fixed;
+    z-index: 200;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-out;
+}
+
+@media (min-width: 600px) {
+    .Modal {
+        width: auto;
+        /* left: calc(50% - 250px); */
+    }
+}

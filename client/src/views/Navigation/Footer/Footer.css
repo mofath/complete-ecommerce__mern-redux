@@ -1,0 +1,171 @@
+footer{
+    width: 100%;
+    background-color:#d8d8d8;
+}
+
+footer .compart01{ flex:4; align-items: flex-start; }
+footer .compart02{ flex:5; align-items: flex-start; }
+footer .compart03{ flex:3; align-items: flex-start; }
+
+
+
+footer h3{
+    font-size: 13px;
+    font-weight: 600;
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+footer h4{
+    color:black;
+    font-size: 12px;
+    margin-bottom:5px;
+}
+footer a{
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s;
+}
+footer a:hover {
+    color:white;
+    margin-left: 15px;
+    transition: all 0.3s;
+}
+
+/* ************************* sec01 ***************************** */
+
+footer .footer-sec01{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: #d8d8d8;
+
+}
+
+footer .footer-sec01 .subscribe-form input{
+    width: 300px;
+    font-size: .75rem;
+    line-height: 1.2;
+    margin: 10px 10px 0px 0px;
+    padding: 8px 16px;
+    display: inline-block;
+    border:solid 1px #a91111;
+    border-radius: 3px;
+    display: inline-block;
+    transition: all 0.3s;
+}
+footer .footer-sec01 .subscribe-form button{  
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #a91111;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+footer .footer-sec01 .subscribe-form button:hover{
+    border: solid 1px #ff9900;
+    box-shadow: 0 0 5px rgba(#febd69, #ffbb00, #febd69, 1);
+    padding: 6px 14px;
+}
+
+
+footer .footer-sec01 .download-app img{
+    width:100px;
+    height: auto;
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+ 
+/* **************** sec02 ****************** */
+
+footer .footer-sec02 {
+    margin-top: 15px;
+}
+
+footer .footer-sec02 .contact-us .contact span {
+    display: block;
+    font-size: 18px;
+}
+footer .footer-sec02 .contact-us .social-icons {
+    margin-top: 40px;
+}
+footer .footer-sec02 .contact-us .social-icons a {
+    width:45px;
+    height: 41px;
+    font-size: 20px;
+    color: #a91111;
+    text-align: center;
+    border: solid 1px #a91111;
+    border-radius: 5px;
+    padding-top: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    transition: all .3s;
+}
+footer .footer-sec02 .contact-us .social-icons a:hover {
+    border: solid 1px white;
+    color: white;
+    transition: all .3s;
+}
+
+
+/* ********************** footer bottom ************************* */
+
+footer .footer-sec03 div{
+    height: auto;  
+    margin: 15px 0px 7px 0px;
+    border-top: solid 0.1px rgb(236, 113, 113);
+    z-index: 50;
+}
+
+footer .footer-sec03 h5{
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    color: black;
+}
+
+@media (max-width:767px){
+    footer{
+        display: flex;
+    }
+    footer .compart01{
+        flex:6;
+    }
+    footer .compart01{
+        flex: 6;
+    }
+    footer .footer-sec01 {
+        flex-direction: row;
+        align-items: center;
+        padding-left: 100px;
+    }
+    footer .footer-sec01 .download-app{
+        display: none;
+    }
+    footer .footer-sec01 .footer-logo{
+        display: none;
+    }
+    footer .footer-sec02 .contact-us .social-icons a {
+        width:20px;
+        height: 20px;
+        font-size: 20px;
+        color: #bebdbd;
+        text-align: center;
+        border: none;
+        border-radius: 5px;
+        margin-right: 5px;
+        display: inline-block;
+        transition: all .3s;
+    }
+    footer .footer-sec02 .category{
+        display: none;
+    }
+
+}

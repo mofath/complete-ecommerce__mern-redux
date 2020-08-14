@@ -1,0 +1,22 @@
+.ProductForm{
+    padding: 20px 40px;
+    background-color: white;
+    width: 900px;
+    height: auto;
+}
+
+.Heading{
+    justify-content: space-between;
+    border-bottom: solid 1px #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.Heading button {
+    color: black;
+    background-color:transparent;
+    padding: 0px 0px 15px 0px;
+    margin: 0px 0px;
+    font-size: 20px;
+    font-weight: 18;
+    border: none;
+}

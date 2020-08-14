@@ -1,0 +1,11 @@
+.ProductSection > div:first-child{
+    flex: 3;
+    height:100%;
+    margin-right: 20px;
+}
+
+.ProductSection > div:last-child{
+    flex: 3;
+    height:100%;
+    margin-right: 20px;
+}

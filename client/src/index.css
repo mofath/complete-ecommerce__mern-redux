@@ -1,17 +1,31 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
-@import '~react-input-range/lib/css/index.css'
 
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+a:hover {
+  text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ****************** general rules ***************** */
+.vertical-layout,
+.horizontal-layout {
+  display: flex;
+  flex:1;
+}
+.horizontal-layout { flex-direction: row; }
+.vertical-layout { flex-direction: column; }
+
+.mycontainer {
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: transparent;
+}
+
+.screen {
+  padding: 30px 5%;
+}
+

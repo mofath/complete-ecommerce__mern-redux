@@ -1,0 +1,39 @@
+.prooduct-card-container {
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+    padding: 0.3px 0.3px;
+    width: 232px;
+}
+
+.prooduct-card-container img{
+    max-width: 230px;
+    height: auto;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.prooduct-card-container .card-body{
+    background-color: white;
+}
+
+.card-body h5 {
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0px 0px 5px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.card-body h6 {
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    padding: 0px 0px 5px 0px;
+    margin: -10px 0px 0px 0px;
+}
+
+.mylink:hover{
+    text-decoration: none!important;
+}
+

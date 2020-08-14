@@ -1,0 +1,100 @@
+
+.CartItem{
+    margin: 10px 0px 15px 0px;
+    padding: 20px 40px 10px 40px;
+    background-color:white;
+    border:solid 1px #d6d6d6;
+    border-radius: 5px;
+    box-shadow: 0px 3px 8px rgb(100,100,100);
+    width: 90%;
+}
+
+.Body{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ebe8e8;
+}
+
+.Frame{
+    flex:3;
+}
+.Frame img {
+    width:75%;
+    border: 1px solid #d7d7d7;
+    padding:1px;
+}
+
+.Details{
+    flex:5
+}   
+.Details p {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+
+.Details table{
+    margin-top: 30px;
+    width: 70%;
+}
+
+.Details table th, 
+.Details table  td {
+    font-size: 14px;
+    text-align: left;
+}
+
+.Details table  td {
+    color: #818181;
+}
+
+.Details table  th {
+    color: #818181;
+}
+
+.Details table tr{
+    height: 30px;
+}
+
+
+
+/* ***************** bottom section ******************** */
+.Bottom {
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ .Bottom input{
+    width: 70px;
+    border: 1px solid #ebe8e8;
+    margin-left: 10px;
+    height: 25px;
+    text-indent: 5px;
+    color: gray;
+ }
+
+
+.RemoveBtn {
+    color: #006fcc;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+ }
+
+.HeartBtn{
+    background-color: white;
+    border: none;
+}
+.HeartBtn:active,
+.HeartBtn:focus
+{
+    outline: none;
+}

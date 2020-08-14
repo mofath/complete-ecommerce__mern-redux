@@ -1,0 +1,37 @@
+.CartSummary{
+    width: 100%;
+    margin-top:35px;
+}
+.TotalBox{
+    padding: 15px 30px;
+    border: solid 0.2px #fefefe;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 8px rgb(100,100,100);
+}
+
+
+.PaymentIcons{
+    padding: 5px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    background-color: gray;
+    margin: 20px 0px;
+}
+
+
+ .PaymentIcons img {
+    width: 20%;
+    height: auto;
+};
+
+.PaymentIcons div {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    background-color: #496817;
+};
+
+

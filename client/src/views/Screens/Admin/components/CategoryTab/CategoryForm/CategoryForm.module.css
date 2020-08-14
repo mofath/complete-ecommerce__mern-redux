@@ -1,0 +1,66 @@
+.CategoryForm{
+    display: flex;
+    padding: 20px 40px;
+    background-color: white;
+    width: 500px;
+    height: auto;
+}
+
+.Heading{
+    justify-content: space-between;
+    border-bottom: solid 1px #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.Heading button {
+    color: black;
+    background-color:transparent;
+    padding: 0px 0px 15px 0px;
+    margin: 0px 0px;
+    font-size: 20px;
+    font-weight: 18;
+    border: none;
+}
+
+
+.CategoryForm label {
+    margin: 0px 0px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+.CategoryForm input{
+    font-size: 13px;
+    border: solid 1px #d7d7d7;
+    color: #686868;
+    padding: 3px 5px;
+    border-radius: 2px;
+    text-indent: 3px;
+}
+
+.CategoryForm input{
+    margin-bottom: 20px;
+}
+
+.SaveBtn {
+    background-color: #0bb5d9;
+    color: white;
+    border: none;
+    width: 48%;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 3px;
+    margin-right: 10px;
+    padding: 3px;
+}
+.CancelBtn{
+    background-color: transparent;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    font-weight: bold;
+    border: none;
+    padding: 3px;
+}
+
+

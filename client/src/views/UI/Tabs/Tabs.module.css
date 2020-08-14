@@ -1,0 +1,10 @@
+.TabList {
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+  background-color: #f5f5f5;
+  list-style: none;
+}
+
+.Content{
+    background-color: white;
+}

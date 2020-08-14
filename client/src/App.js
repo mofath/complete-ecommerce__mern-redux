@@ -1,43 +1,40 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { ProtectedRoute } from './views/protected.route'
+import React, { Suspense } from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+import Layout from './views/_Layout/Layout';
+import Spinner from './views/UI/Spinner/Spinner'
+
+import LandingScreen from './views/Screens/Landing/Landing';
+
+const ProductScreen = React.lazy(() => { return import('./views/Screens/Product/Product'); });
+const CartScreen = React.lazy(() => { return import('./views/Screens/Cart/Cart'); });
+const UserOrdersScreen = React.lazy(() => { return import('./views/Screens/UserOrders/UserOrders'); });
+const OrderDetailScreen = React.lazy(() => { return import('./views/Screens/OrderDetail/OrderDetail'); });
+const AdminScreen = React.lazy(() => { return import('./views/Screens/Admin/Admin'); });
+const HomeScreen = React.lazy(() => { return import('./views/Screens/Home/Home'); });
+
+const App = () =>
+  <div className="app">
+    <Layout>
+      <Switch>
+        <Route path="/product/:id" exact render={(props) => <Suspense fallback={Spinner}><ProductScreen {...props} /></Suspense>} />
+        <Route path="/cart" exact render={() => <Suspense fallback={Spinner}><CartScreen /></Suspense>} />
+        <Route path="/user/orders" exact render={() => <Suspense fallback={Spinner}><UserOrdersScreen /></Suspense>} />
+        <Route path="/user/order/:id" exact render={(props) => <Suspense fallback={Spinner}><OrderDetailScreen  {...props} /></Suspense>} />
+        <Route path="/admin" exact render={() => <Suspense fallback={Spinner}><AdminScreen /></Suspense>} />
+        <Route path="/home" exact render={() => <Suspense fallback={Spinner}><HomeScreen /></Suspense>} />
+        <Route path="/" exact component={LandingScreen} />
+      </Switch>
+    </Layout>
+  </div>
 
 
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
-import '../node_modules/bootstrap/dist/js/bootstrap.js';
-import '../node_modules/jquery/dist/jquery';
-import '../node_modules/react-popper/dist/index.umd.js';
-import '../node_modules/popper.js';
-
-import HomePage from './views/home-page/home-page';
-import AdminPage from './views/admin-page/admin-page';
-import ProducsPage from './views/products-page/products-page';
-import ProductDetailPage from './views/product-details-page/product-details-page';
-import CartPage from './views/cart-page/cart-page';
-
-import Navbar from './views/utils/navbar/navbar'
-import Footer from './views/utils/footer/footer'
-
-
-function App() {
-  return (
-    <BrowserRouter>
-      <div className="App">
-
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={HomePage}  ></Route>
-          <Route exact path="/products" component={ProducsPage} />
-          <Route exact path="/product/:productId" component={ProductDetailPage} />
-
-          {/* <ProtectedRoute exact path="/admin" component={AdminPage} /> */}
-          {/* <ProtectedRoute exact path="/user/cart" component={CartPage} /> */}
-          <Route exact path="/admin" component={AdminPage} />
-          <Route exact path="/user/cart" component={CartPage} />
-        </Switch>
-        <Footer />
-      </div>
-    </BrowserRouter>
-  );
-}
 export default App;
+
+
+// <Route path='*' exact={true} component={NotFoundPage} />
+// <Route exact path="/not-authorized" component={NotAuthorizedPage} />
+// <PrivateRoute exact path="/user/cart"  roles={["user","admin"]} component={CartPage} />
+// <PrivateRoute exact path="/admin" roles={["admin"]} component={AdminPage} />
+
+

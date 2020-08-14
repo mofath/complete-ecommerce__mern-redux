@@ -1,71 +1,116 @@
-const User = require('../models/user.model')
-const mongoose = require('mongoose')
+const { UserModel } = require('../models/user.model')
 const { jwtToken, comparePassword } = require('../utils/utils');
 
-const DB_URL = 'mongodb://localhost:27017/online-shop'
+const DBManager = require('../utils/DBManage')
 
-const auth = {
-    async signUp(req, res, next) {
-        mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-            .then(() => console.log('succcessfully connected to mongodb'))
-            .catch(err => console.log(`DB Connection Error: ${err.message}`));
-        const { username, email, password, role } = req.body;
+const authController = {
+    signUp: async (req, res, next) => {
+        console.log('\x1b[33m%s\x1b[0m', "...SIGNUP REQUEST...");
+
+        const { username, email, password } = req.body;
+
+        DBManager.CONNECT();
         try {
-            const user = await User.findOne({ email })
-            if (user) {
-                mongoose.disconnect();
-                return res.status(400).json({ message: { msgBody: 'Email is already taken', msgErroe: true } })
+            const existingEmail = await UserModel.findOne({ email }).lean();
+            if (existingEmail) {
+                DBManager.DISCONNECT();
+                return res.statuns(403).json({ message: { msgBody: 'Email is already taken', msgError: true } })
             } else {
-                const newUser = new User({ username, email, password, role })
-                const user = await newUser.save();
-                if (user) {
-                    console.log(user);
-                    mongoose.disconnect();
-                    return res.status(201).send({ message: { msgBody: 'Account successfully created', msgErroe: false } });
-                } else {
-                    mongoose.disconnect();
-                    res.status(500).json({ message: { msgBody: "Error savin user to database", msgError: true } })
-                }
+                const newUser = new UserModel({ username, email: email.toLowerCase(), password })
+                await newUser.save();
+
+                DBManager.DISCONNECT();
+                return res.status(201).send({ message: { msgBody: 'Account successfully created', msgError: false } });
             }
-        } catch (e) {
-            mongoose.disconnect();
-            console.log(e);
-            res.status(500).json({ message: { msgBody: "Error has occured", msgError: true } })
+        } catch (error) {
+            DBManager.DISCONNECT();
+            console.error(error);
+            return res.status(500).json({ message: { msgBody: "Something went wrong", msgError: true } })
         }
     },
 
 
 
-    async login(req, res, next) {
-        console.log('sign in');
-        
-        mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-            .then(() => console.log('succcessfully connected to mongodb'))
-            .catch(err => console.log(`DB Connection Error: ${err.message}`));
+    login: async (req, res, next) => {
+        console.log('\x1b[33m%s\x1b[0m', "...LOGIN REQUEST...");
 
+        DBManager.CONNECT();
         try {
             const { email, password } = req.body;
-            const user = await User.findOne({ email });
-            if (user) {    
-                mongoose.disconnect();            
+            const user = await UserModel.findOne({ email });
+            if (user) {
+                DBManager.DISCONNECT();
                 if (comparePassword(password, user.password)) {
-                    const { _id, username } = user;
-                    const token = jwtToken.createToken(_id);
-                    res.cookie('access_token', token, { httpOnly: false, sameSite: true });
-                    return res.status(200).json({ isAuthenticated: true, user: { _id, username } });
+                    const { password, ...rest } = user._doc
+                    const token = jwtToken.createToken({ userId: user._id, email: user.email, role: user.role, username: user.username });
+
+                    res.cookie('access_token', token, { httpOnly: true, sameSite: true });
+                    return res.status(201).json({
+                        message: { msgBody: `Welcome, ${user.username}`, msgError: false },
+                        isAuthenticated: true, userInfo: rest
+                    });
                 } else {
-                    mongoose.disconnect();
-                    return res.status(400).json({ message: { msgBody: 'invalid password', msgErroe: false } })
+                    DBManager.DISCONNECT();
+                    return res.status(401).json({
+                        message: { msgBody: 'Invalid password', msgError: true },
+                        isAuthenticated: false,
+                    })
                 }
             } else {
-                mongoose.disconnect();
-                return res.status(400).json({ message: { msgBody: 'invalid email', msgErroe: false } })
+                DBManager.DISCONNECT();
+                return res.status(401).json({
+                    message: { msgBody: 'Invalid email', msgError: true },
+                    isAuthenticated: false,
+                })
             }
-        } catch (e) {
-            mongoose.disconnect();
-            return next(new Error(e));
+        } catch (error) {
+            DBManager.DISCONNECT();
+            console.error(error);
+            return res.status(500).json({ message: { msgBody: "Something went wrong", msgError: true, error } })
         }
     },
+
+
+    requireAuth: async (req, res, next) => {
+        console.log('\x1b[33m%s\x1b[0m', "...AUTH REQUEST...");
+
+        let token = req.cookies["access_token"];
+
+        if (!token) {
+            return res.status(401).json({ message: { msgBody: 'No token, authorization denied', msgError: true } });
+        }
+        else {
+            try {
+                decodedToken = await jwtToken.verifyToken(token);
+            } catch (error) {
+                return res.status(404).json({ message: { msgBody: 'Token expired or not valid', msgError: true } });
+            }
+        }
+        if (decodedToken) {
+            req.userInfo = { id: decodedToken.sub, email: decodedToken.email, username: decodedToken.username, role: decodedToken.role }
+            next();
+        }
+        else return res.status(401).json({ message: { msgBody: 'Invalid token', msgError: true } });
+    },
+
+    requireAdmin: (req, res, next) => {
+        console.log('\x1b[33m%s\x1b[0m', "...REQUIRE ADMIN...");
+
+        if (req.userInfo.role === 'admin') next();
+        return res.status(401).json({ message: { msgBody: 'Not authorized', msgError: true } });
+    },
+
+
+    
+    logout: async (req, res, next) => {
+        console.log('\x1b[33m%s\x1b[0m', "...LOGOUT REQUEST...");
+        
+        res.clearCookie('access_token');
+        return res.status(200).json({ message: { msgBody: 'Logout successfully', msgError: false } });
+    },
+
+
+
 };
 
-module.exports = auth;
+module.exports = authController;

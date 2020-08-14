@@ -1,0 +1,103 @@
+
+.auth-form {
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+.auth-form input[type=text],
+.auth-form input[type=password]
+{
+    font-size: 13px;
+    text-indent: 10px;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: inset;
+    border:#DCD6CC 1px solid;
+    padding: 1px 0px;
+    cursor: text;
+    transition: all 0.30s ease-in-out;
+}
+.auth-form input[type=text]:focus,
+.auth-form input[type=password]:focus
+ {
+    box-shadow: 0 0 5px rgba(#febd69, #ffbb00, #febd69, 1);
+    padding: 3px 0px 3px 3px;
+    border: 1px solid #febd69;
+    transition: all 0.30s ease-in-out;
+    outline: none;
+}
+
+.auth-form .signup-input{
+    width: 85%;
+    height: 30px;
+}
+.auth-form .login-input {
+    /* width:195px; */
+    flex:4;
+    margin-right: 10px;
+}
+
+.auth-form br {
+    display: block; /* makes it have a width */
+    content: ""; /* clears default height */
+    margin-top: 0px; /* change this to whatever height you want it */
+}
+
+.auth-form input[type=submit],
+.auth-form button
+{
+    line-height: 1;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px; 
+    width: 80px;
+    border-radius: 3px;
+    font-weight: 500;
+}
+.auth-form .login-btn{
+    flex:2;
+    height: 30px;
+    background-color: #382110;
+    border: none;
+    border-radius: 3px;
+    color: white;
+} 
+.auth-form .signup-btn{
+    width: 75px;
+    background-image: linear-gradient(to bottom,#faebc7 ,#f0c24e );
+    border: 1px solid #be993b;
+} 
+.auth-form .loading-btn{
+    flex:2;
+    height: 30px;
+    background-color: #775640;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 10px;
+} 
+
+.auth-form .disable {
+    width: 75px;
+    background-image: linear-gradient(to bottom,#faebc7 ,#f0c24e );
+    cursor: not-allowed;
+    border: 1px solid #be993b;
+    cursor:none;
+    pointer-events: none;
+    color: #906d6d;
+}
+
+
+.auth-form .signup-input-group{
+    margin-bottom: 15px;
+ }
+
+ .auth-form .error {
+    color:red;
+    font-size: 10px;
+}
+.auth-form .inputError {
+    border-color: red;
+    background-color: pink;
+}
+
+

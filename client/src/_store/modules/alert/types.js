@@ -1,0 +1,7 @@
+
+export const GET_MESSAGE = 'GET_MESSAGE';
+export const CLEAR_MESSAGE = 'CLEAR_MESSAGE';
+export const DISPLAY_MESSAGE = 'DISPLAY_MESSAGE';
+
+
+

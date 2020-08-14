@@ -1,0 +1,22 @@
+.slides {
+    position: relative;
+}
+.slick-prev, .slick-next {
+      position: absolute;
+      top: 50%;
+      z-index: 10;
+}
+
+.slick-arrow {
+    background-color: #c2c2c2;
+    color:black;
+    height: 35px;
+    width: 35px;
+    border-radius: 100px;
+    margin:0px;
+}
+.slick-arrow:hover,
+.slick-arrow:active,
+.slick-arrow:focus {
+    background-color: rgb(175, 117, 117) !important;
+}

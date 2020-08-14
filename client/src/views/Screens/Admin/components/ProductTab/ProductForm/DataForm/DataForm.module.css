@@ -1,0 +1,53 @@
+.DataForm{
+    height: 280px;
+    display: flex;
+    justify-content: space-between;
+}
+.DataForm label {
+    margin: 0px 0px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+.DataForm  input,
+.DataForm  select,
+.DataForm  textarea
+{
+    font-size: 13px;
+    border: solid 1px #d7d7d7;
+    color: #686868;
+    padding: 3px 5px;
+    border-radius: 2px;
+    text-indent: 3px;
+}
+
+.DataForm  > div{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.DataForm  > div > div:first-child{
+    margin-right: 10px;
+}
+
+.SaveBtn {
+    background-color: #0bb5d9;
+    color: white;
+    border: none;
+    width: 48%;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 3px;
+    margin-right: 10px;
+    padding: 3px;
+}
+.CancelBtn{
+    background-color: transparent;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    font-weight: bold;
+    border: none;
+    padding: 3px;
+}
+

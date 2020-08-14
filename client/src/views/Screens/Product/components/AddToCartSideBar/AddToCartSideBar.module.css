@@ -1,0 +1,81 @@
+.AddToCartSideBar{
+    border: solid 1px #dddddd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.AddToCartSideBar >  h5:first-child{
+    width: 100%;
+    border-bottom: solid 0.7px #ededed;
+    padding: 10px 10px;
+}
+
+.AddToCartSideBar div{
+    padding: 5px 10px;
+    width: 100%;
+}
+
+
+.AddToCartSideBar h5{
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    padding: 0px 0px;
+}
+
+.AddToCartSideBar p{
+    font-size: 13px;
+    font-weight: 400;
+    text-align: left;
+    padding: 0px 0px;
+}
+
+.AddToCartSideBar i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 35px;
+    border: solid 0.7px #ededed;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+    
+
+.AddCartBtn,
+.LoadingBtn {
+    color: white;
+    cursor: pointer;  
+    font-weight: bold;
+    border-radius: 3px;
+    width:100%;
+    border: none;
+    height: 35px;
+    font-size: 17px;
+    margin-top: 15px;
+    border: none;
+    outline: none;
+}
+.AddCartBtn{
+    background-color: #222222;
+    cursor: pointer;  
+}
+.LoadingBtn{
+    background-color: #707070;
+    cursor:none;
+}
+
+.AddCartBtn:hover,
+.LoadingBtn:hover,
+.LoadingBtn:focus,
+.LoadingBtn:active
+{
+    background-color: #707070;
+    color: #fefefe;
+    outline: none;
+}
+
+
+
+
+

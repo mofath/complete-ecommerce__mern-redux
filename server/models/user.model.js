@@ -1,36 +1,45 @@
 const mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
-const DB_URL = 'mongodb://localhost:27017/goodreads'
 
-const userSchema = new mongoose.Schema({
-    username: {
-        type: String,
-        required: true,
-        min: 3,
-        max: 15,
+const userSchema = new mongoose.Schema(
+    {
+        username: {
+            type: String,
+            required: true,
+            min: 3,
+            max: 15,
+        },
+        email: {
+            type: String,
+            required: true,
+            unique: true,
+            index: true,
+            dropDups: true,
+        },
+        password: {
+            type: String,
+            required: true,
+        },
+        role: {
+            type: String,
+            enum: ['user', 'admin'],
+            default: "user"
+        },
+        cart: [{
+            product: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Product',
+                required: true
+            },
+            quantity: { type: Number, required: true },
+            addedAt: { type: Date }
+        }],
     },
-    email: {
-        type: String,
-        required: true,
-    },
-    password: {
-        type: String,
-        required: true,
-    },
-    role: {
-        type: String,
-        enum: ['user', 'admin']
-    },
-    cart: [{
-        type: Array,
-        default: []
-    }],
-    history : {
-        type: Array,
-        default: []
-    }
-});
+    { timestamps: true }
+);
+
+
 
 
 userSchema.pre('save', function (next) {
@@ -63,7 +72,7 @@ userSchema.methods.comparePassword = function (candidatePassword, cb) {
                     reject('passwords dont match')
                     return cb(null, isMatch);
                 } else {
-                    resolve('passwords match')                    
+                    resolve('passwords match')
                     return cb(null, user);
                 }
             }
@@ -72,4 +81,6 @@ userSchema.methods.comparePassword = function (candidatePassword, cb) {
 };
 
 
-module.exports = mongoose.model('User', userSchema) 
+const UserModel = mongoose.model('User', userSchema);
+
+module.exports = { UserModel }

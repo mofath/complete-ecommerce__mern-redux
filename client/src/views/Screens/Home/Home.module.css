@@ -1,0 +1,58 @@
+.HomeScreen {
+    background-color: #f5f5f5;
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-rows: auto;
+    grid-template-areas: "sidebar main";
+    height: auto;
+}
+
+.HomeScreen aside,
+.HomeScreen main
+{
+    text-align: center;
+}
+
+.HomeScreen aside {
+    grid-area: sidebar;
+}
+
+.HomeScreen main {
+    grid-area: main;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.LoadMore,
+.Loading {
+    color: white;
+    cursor: pointer;  
+    font-weight: bold;
+    border-radius: 3px;
+    width:50%;
+    border: none;
+    height: 35px;
+    font-size: 17px;
+    margin-top: 15px;
+    border: none;
+    outline: none;
+}
+.LoadMore{
+    background-color: #222222;
+    cursor: pointer;  
+}
+.Loading{
+    background-color: #707070;
+    cursor:none;
+}
+
+.LoadMore:hover,
+.Loading:hover,
+.Loading:focus,
+.Loading:active
+{
+    background-color: #707070;
+    color: #fefefe;
+    outline: none;
+}

@@ -1,0 +1,33 @@
+
+.Default,
+.Active
+{  
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0px 2px -1px 2px;
+  padding: 10px 25px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  transition: all 0.3;
+}
+.Default{
+  background-color: #4f646f;
+  color: #dfe8eb;
+  cursor: pointer;
+}
+.Active {  
+  background-color: white;
+  color: black;
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
+}
+.Default:hover {
+  background-color:#2c5e8c;
+  color: white;
+  transition: all 0.3;
+}
+
+.Default:first-child,
+.Active:first-child {
+  margin-left: 5%;
+}
