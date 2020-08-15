@@ -33,18 +33,44 @@
     height: 80px;
 }
 
-.Form button {
+.SubmitReviewBtn,
+.LoadingBtn{
+    border-radius: 3px;
+    margin-top: 10px;    
+    font-weight: 500;    
+    vertical-align: middle;
+    align-self: flex-end;
+    color: white;
+    border: none;
+    outline: none;
+ }
+.SubmitReviewBtn  {
+    background-color: #4267b2;
     width: 80px;
     height: 30px;
-    vertical-align: middle;
-    border-radius: 3px;
-    margin-top: 10px;
-    color: white;
-    background-color: #397fbb;
-    border: solid 1px #436c8d;
+    cursor: pointer;
+}
+.SubmitReviewBtn:hover {
+    background-color: #365899;
+}
+.LoadingBtn {
+    background-color:#9cb4d8;
+    width: 70px;
+    height: 25px;
+    border: none;
+    cursor: progress;
+}
+.SubmitReviewBtn:hover,
+.SubmitReviewBtn:focus,
+.SubmitReviewBtn:active,
+.LoadingBtn :hover,
+.LoadingBtn :focus,
+.LoadingBtn :active
+ {
     outline: none;
-    align-self: flex-end;
-  }
+    box-shadow : none,
+}
+
 
   .TextContainer{
     background-color: white;

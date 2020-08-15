@@ -1,6 +1,8 @@
 const DBManager = require('../utils/DBManage')
 const { ProductModel } = require("../models/product.model");
 
+const { serverErrMsg } = require('../utils/data')
+
 const productController = {
 
     getAllProducts: async (req, res, next) => {
@@ -11,10 +13,11 @@ const productController = {
             const products = await ProductModel.find({}).select('name price stock createdAt gender category images').lean();
             DBManager.DISCONNECT();
             return res.status(200).json({ message: { msgBody: 'Products fetched successfully', msgError: false }, products })
-        } catch (error) {
+        } 
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error.message);
-            return res.status(500).json({ message: { msgBody: 'Something went wrong', msgError: true, error } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -55,12 +58,12 @@ const productController = {
                 DBManager.DISCONNECT();
                 return res.status(404).json({ message: { msgBody: 'Can not find product', msgError: true } })
             }
-        } catch (error) {
-            DBManager.DISCONNECT();
-            console.error(error.message);
-            return res.status(500).json({ message: { msgBody: 'Something went wrong', msgError: true, error } })
         }
-
+        catch (err) {
+            DBManager.DISCONNECT();
+            console.error(err.message);
+            next(serverErrMsg)
+        }
     },
 
 
@@ -75,9 +78,10 @@ const productController = {
             const newAddedProduct = await newProduct.save();
             return res.status(201).json({ message: { msgBody: 'Product saved succesfully', msgError: false }, newAddedProduct })
         }
-        catch (error) {
-            console.error(error.message);
-            return res.status(500).json({ message: { msgBody: 'Something went wrong', msgError: true } })
+        catch (err) {
+            DBManager.DISCONNECT();
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -112,11 +116,11 @@ const productController = {
                     .sort([[sortBy, order]]).skip(skip).limit(limit)
                     .select('name price stock createdAt gender category images')
         }
-        catch (error) {
-            console.error(error.message);
-            return res.status(500).json({ message: { msgBody: 'Something went wrong', msgError: true, error } })
+        catch (err) {
+            DBManager.DISCONNECT();
+            console.error(err.message);
+            next(serverErrMsg)
         }
-
         return res.status(200).json({ message: { msgBody: 'success', msgError: false }, products, postSize: products.length })
     },
 
@@ -132,10 +136,10 @@ const productController = {
             DBManager.DISCONNECT();
             return res.status(200).json({ message: { msgBody: 'Success', msgError: false, priceRange } })
         }
-        catch (error) {
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error.message);
-            return res.status(500).json({ message: { msgBody: 'Something went wrong', msgError: true, error } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     }
 };

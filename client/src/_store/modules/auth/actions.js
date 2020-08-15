@@ -17,7 +17,7 @@ import {
 
 } from "./types";
 
-import { GET_CART_SIZE } from "../cart/types";
+import { GET_CART_SIZE, CLEAR_CART } from "../cart/types";
 import { getMessage, displayMessage } from '../alert/actions';
 import authService from '../../../_services/auth.service'
 
@@ -77,6 +77,7 @@ const logoutAction = () => async (dispatch) => {
     const { data } = await authService.logout();
     dispatch(getMessage(data.message.msgBody, false, LOGOUT_REQUEST))
     dispatch({ type: LOGOUT_SUCCESS });
+    dispatch({ type: CLEAR_CART });
     dispatch(displayMessage("info"))
   }
   catch (error) {

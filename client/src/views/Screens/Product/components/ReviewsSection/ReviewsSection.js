@@ -13,7 +13,7 @@ import classes from './ReviewSection.module.css';
 const ReviewSection = ({ productId }) => {
     const reviewReducer = useSelector(state => state.reviewReducer);
     const authReducer = useSelector(state => state.authReducer);
-    const { reviews } = reviewReducer;
+    const { reviews, submitReviewLoading } = reviewReducer;
     const { isAuthenticated } = authReducer;
 
     const dispatch = useDispatch();
@@ -34,10 +34,9 @@ const ReviewSection = ({ productId }) => {
             <h6>Write a review</h6>
         </div>
 
-        <ReviewForm productId={productId} submitReview={submitReview} />
+        <ReviewForm productId={productId} submitReview={submitReview} loading={submitReviewLoading} />
         <ReviewList reviews={reviews} />
     </section>
-
 }
 
 export default ReviewSection;

@@ -9,6 +9,7 @@ const options = {
     useCreateIndex: true,
     useFindAndModify: false
 }
+mongoose.Promise = global.Promise;
 
 const DBManager = {
     CONNECT: async () => {
@@ -30,5 +31,6 @@ const DBManager = {
         }
     },
 };
+
 
 module.exports = DBManager;

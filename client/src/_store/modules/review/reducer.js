@@ -10,16 +10,22 @@ import {
 
 const INITIAL_STATE = {
     reviews: [],
-    reviewLoading: true,
+    submitReviewLoading: null,
+    reviewLoading: null,
 }
 
 function reviewReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
         case GET_PRODUCT_REVIEWS:
-        case SUBMIT_PRODUCT_REVIEW:
             return {
                 ...state,
                 reviewLoading: true,
+            };
+
+        case SUBMIT_PRODUCT_REVIEW:
+            return {
+                ...state,
+                submitReviewLoading: true,
             };
 
         case GET_PRODUCT_REVIEWS_SUCCESS:
@@ -32,15 +38,20 @@ function reviewReducer(state = INITIAL_STATE, action) {
         case SUBMIT_PRODUCT_REVIEW_SUCCESS:
             return {
                 ...state,
-                reviews: [...state.reviews, action.payload.newReview, ],
-                reviewLoading: false,
+                reviews: [...state.reviews, action.payload.newReview,],
+                submitReviewLoading: false,
             };
 
         case GET_PRODUCT_REVIEWS_FAIL:
-        case SUBMIT_PRODUCT_REVIEW_FAIL:
             return {
                 ...state,
                 reviewLoading: false,
+            };
+
+        case SUBMIT_PRODUCT_REVIEW_FAIL:
+            return {
+                ...state,
+                submitReviewLoading: false,
             };
 
         default:

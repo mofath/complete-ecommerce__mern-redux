@@ -1,5 +1,7 @@
-const DBManager = require('../utils/DBManage')
-const {UserModel} = require('../models/user.model')
+const DBManager = require('../utils/DBManage');
+const { UserModel } = require('../models/user.model');
+
+const { serverErrMsg } = require('../utils/data');
 
 
 const cartController = {
@@ -17,10 +19,10 @@ const cartController = {
                 cartItems: user.cart
             })
         }
-        catch (error) {
+        catch (err) {
             DBManager.DISCONNECT();
-            console.log(error.message);
-            return res.status(500).json({ message: { msgBody: "Something went wrong", msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -42,10 +44,10 @@ const cartController = {
                 message: { msgBody: "Cart item removed successfully", msgError: false },
             })
         }
-        catch (error) {
+        catch (err) {
             DBManager.DISCONNECT();
-            console.log(error.message);
-            return res.status(500).json({ message: { msgBody: "Something went wrong", msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -96,10 +98,11 @@ const cartController = {
                 message: { msgBody: "Item added successfully to cart", msgError: false },
                 newAddedCartItem,
             })
-        } catch (error) {
+        }
+        catch (err) {
             DBManager.DISCONNECT();
-            console.log(error.message);
-            return res.status(500).json({ message: { msgBody: "Something went wrong", msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 };

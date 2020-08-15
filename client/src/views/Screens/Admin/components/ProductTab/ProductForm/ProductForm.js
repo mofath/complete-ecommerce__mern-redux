@@ -63,6 +63,7 @@ function UploadProductPage(props) {
                     <div className="horizontal-layout">
                         <DropZone uploadImage={uploadImage} />
                         <DataForm
+                            setImages={setImages}
                             categories={categories}
                             submit={submit} images={Images}
                             close={props.close} formType={props.formType}

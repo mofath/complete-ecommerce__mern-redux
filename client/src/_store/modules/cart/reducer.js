@@ -17,6 +17,7 @@ import {
     PLACE_ORDER_FAIL,
 
     GET_CART_SIZE,
+    CLEAR_CART,
 } from './types'
 
 
@@ -93,6 +94,12 @@ function cartReducer(state = INITIAL_STATE, action) {
                 isLoading: false,
             }
 
+        case CLEAR_CART:
+            return {
+                ...state, ...INITIAL_STATE
+            }
+
+    
         default:
             return state
     }

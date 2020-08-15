@@ -17,3 +17,4 @@ export const PLACE_ORDER_SUCCESS = 'PLACE_ORDER_SUCCESS';
 export const PLACE_ORDER_FAIL = 'PLACE_ORDER_FAIL';
 
 export const GET_CART_SIZE = 'GET_CART_SIZE';
+export const CLEAR_CART = 'CLEAR_CART';

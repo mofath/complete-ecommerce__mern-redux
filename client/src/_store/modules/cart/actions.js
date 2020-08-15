@@ -15,7 +15,6 @@ import {
     PLACE_ORDER_REQUEST,
     PLACE_ORDER_SUCCESS,
     PLACE_ORDER_FAIL,
-
 } from './types'
 
 

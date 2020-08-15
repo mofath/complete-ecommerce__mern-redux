@@ -1,7 +1,8 @@
-const { UserModel } = require('../models/user.model')
-const { jwtToken, comparePassword } = require('../utils/utils');
+const { UserModel } = require('../models/user.model');
 
+const { jwtToken, comparePassword } = require('../utils/utils');
 const DBManager = require('../utils/DBManage')
+const { serverErrMsg } = require('../utils/data');
 
 const authController = {
     signUp: async (req, res, next) => {
@@ -14,7 +15,7 @@ const authController = {
             const existingEmail = await UserModel.findOne({ email }).lean();
             if (existingEmail) {
                 DBManager.DISCONNECT();
-                return res.statuns(403).json({ message: { msgBody: 'Email is already taken', msgError: true } })
+                return res.status(403).json({ message: { msgBody: 'Email is already taken', msgError: true } })
             } else {
                 const newUser = new UserModel({ username, email: email.toLowerCase(), password })
                 await newUser.save();
@@ -22,10 +23,11 @@ const authController = {
                 DBManager.DISCONNECT();
                 return res.status(201).send({ message: { msgBody: 'Account successfully created', msgError: false } });
             }
-        } catch (error) {
+        }
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error);
-            return res.status(500).json({ message: { msgBody: "Something went wrong", msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -63,10 +65,11 @@ const authController = {
                     isAuthenticated: false,
                 })
             }
-        } catch (error) {
+        }
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error);
-            return res.status(500).json({ message: { msgBody: "Something went wrong", msgError: true, error } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -101,10 +104,10 @@ const authController = {
     },
 
 
-    
+
     logout: async (req, res, next) => {
         console.log('\x1b[33m%s\x1b[0m', "...LOGOUT REQUEST...");
-        
+
         res.clearCookie('access_token');
         return res.status(200).json({ message: { msgBody: 'Logout successfully', msgError: false } });
     },

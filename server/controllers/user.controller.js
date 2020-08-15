@@ -1,7 +1,8 @@
-const { UserModel } = require('../models/user.model')
+const { UserModel } = require('../models/user.model');
 const { jwtToken } = require('../utils/utils');
+const DBManager = require('../utils/DBManage');
+const { serverErrMsg } = require('../utils/data')
 
-const DBManager = require('../utils/DBManage')
 
 const userController = {
 
@@ -17,10 +18,11 @@ const userController = {
         try {
             const users = await UserModel.find({});
             res.status(200).json({ message: { msgBody: "Users fetched successfully", msgError: false }, users });
-        } catch (error) {
+        } 
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error.message);
-            return res.status(500).json({ message: { msgBody: "Something went wrong", msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -44,10 +46,11 @@ const userController = {
                 DBManager.DISCONNECT();
                 return res.status(404).json({ message: { msgBody: "User not found ", msgError: true } })
             }
-        } catch (error) {
+        } 
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error.message);
-            return res.status(500).json({ message: { msgBody: "Something went wrong", msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -63,10 +66,11 @@ const userController = {
             } else {
                 return res.status(404).json({ message: { msgBody: "User not found ", msgError: true } })
             }
-        } catch (error) {
+        } 
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error.message);
-            return res.status(500).json({ message: { msgBody: "Something went wrong", msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -83,10 +87,11 @@ const userController = {
             } else {
                 return res.status(404).send("No such user");
             }
-        } catch (error) {
+        } 
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error.message);
-            return res.status(500).json({ message: { msgBody: "Something went wrong", msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -99,10 +104,10 @@ const userController = {
             DBManager.disconnect();
             res.status(200).json({ userCount })
         }
-        catch (error) {
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error.message);
-            return res.status(500).json({ message: { msgBody: "Something went wrong", msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     }
 };

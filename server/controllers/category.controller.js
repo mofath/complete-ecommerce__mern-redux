@@ -1,6 +1,8 @@
 const DBManager = require('../utils/DBManage')
 const { CategoryModel } = require("../models/category.model");
 
+const { serverErrMsg } = require('../utils/data')
+
 const categoryController = {
 
     getAllCategories: async (req, res, next) => {
@@ -15,10 +17,11 @@ const categoryController = {
                 DBManager.DISCONNECT();
                 return res.status(200).json({ message: { msgBody: 'No categories found!', msgError: true } })
             }
-        } catch (error) {
+        }
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error.message)
-            return res.status(500).json({ message: { msgBody: 'Something went wrong', msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -41,10 +44,11 @@ const categoryController = {
                 return res.status(200).json({ message: { msgBody: 'Category successfully added!', msgError: false }, newAddedCategory: categorySaved })
 
             }
-        } catch (error) {
+        }
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error.message)
-            return res.status(500).json({ message: { msgBody: 'Something went wrong', msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -53,16 +57,17 @@ const categoryController = {
         console.log('\x1b[33m%s\x1b[0m', "...MODIFY CATEGORY...");
 
         const { name } = req.body;
-        
+
         DBManager.CONNECT();
         try {
             const updatedCategory = await CategoryModel.updateOne({ _id: req.params.id }, { $set: { "name": name } })
             DBManager.DISCONNECT();
             return res.status(200).json({ message: { msgBody: 'Category updated successfully.', msgError: false } })
-        } catch (error) {
+        }
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error.message)
-            return res.status(500).json({ message: { msgBody: 'Something went wrong', msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -81,10 +86,11 @@ const categoryController = {
                 DBManager.DISCONNECT();
                 return res.status(404).json({ message: { msgBody: 'Category not exist!', msgError: false } })
             }
-        } catch (error) {
+        }
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error.message);
-            return res.status(500).json({ message: { msgBody: 'Something went wrong', msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 

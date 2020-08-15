@@ -4,6 +4,7 @@ const { OrderModel } = require("../models/order.model");
 const { UserModel } = require('../models/user.model')
 const { ProductModel } = require("../models/product.model");
 
+const { serverErrMsg } = require('../utils/data')
 
 const orderController = {
     newOrderTransaction: async (req, res, next) => {
@@ -55,10 +56,11 @@ const orderController = {
 
             return res.status(200).json({ message: { msgBody: 'Your payment is approved ', msgError: false } })
 
-        } catch (error) {
+        }
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error('\x1b[31m%s\x1b[0m', error.message);
-            return res.status(500).json({ message: { msgBody: 'Something went wrong', msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -70,9 +72,11 @@ const orderController = {
         try {
             const orders = await OrderModel.find({ "user.id": req.userInfo.id }).populate('orderItems.item')
             return res.status(200).json({ message: { msgBody: "User orders fetched successfuly", msgError: false }, orders })
-        } catch (error) {
-            console.error(error.message);
-            return res.status(500).json({ message: { msgBody: "Something went wrong", msgError: true } })
+        }
+        catch (err) {
+            DBManager.DISCONNECT();
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -85,10 +89,11 @@ const orderController = {
         try {
             const order = await OrderModel.findById({ _id: id }, 'orderItems totalPrice').populate('orderItems.product')
             return res.status(200).json({ message: { msgBody: 'Order fetched successfully', msgError: false }, order });
-        } catch (error) {
+        }
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error.message);
-            return res.status(500).json({ message: { msgBody: 'Something went wrong', msgError: true, error } });
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 };

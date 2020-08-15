@@ -1,18 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-import Avatar from '../../../../../UI/Avatar/Avatar'
-import StarRating from '../../../../../UI/StarRating/StarRating'
+import Avatar from '../../../../../UI/Avatar/Avatar';
+import StarRating from '../../../../../UI/StarRating/StarRating';
 
-import classes from './ReviewForm.module.css'
+import classes from './ReviewForm.module.css';
 
-const ReviewForm = ({ productId, submitReview }) => {
+const ReviewForm = ({ productId, submitReview, loading }) => {
 
     const [RviewText, setRviewText] = useState("");
     const [Rating, setRating] = useState(1);
 
+
     const submit = () => {
-        const reviewData = { productId, RviewText, Rating }
-        submitReview(reviewData)
+        const reviewData = { productId, RviewText, Rating };
+        submitReview(reviewData);
     }
 
 
@@ -27,7 +28,11 @@ const ReviewForm = ({ productId, submitReview }) => {
                     <textarea onChange={(event) => setRviewText(event.target.value)} placeholder="Leave a review..." > </textarea>
                 </div>
 
-                <button onClick={submit}>Submit</button>
+                <button
+                    className={loading ? classes.LoadingBtn : classes.SubmitReviewBtn}
+                    onClick={submit}>
+                    Submit
+                </button>
             </div>
 
         </div>

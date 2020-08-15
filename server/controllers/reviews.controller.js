@@ -1,5 +1,8 @@
-const DBManager = require('../utils/DBManage')
+const DBManager = require('../utils/DBManage');
+
 const { ProductModel } = require("../models/product.model");
+const { serverErrMsg } = require('../utils/data');
+
 
 const reviewsController = {
 
@@ -15,10 +18,10 @@ const reviewsController = {
                 .select('reviews cumulativeRating').lean()
             return res.status(200).json({ message: { msgBody: 'Reviews fetched successfully', msgError: false }, reviews })
         }
-        catch (error) {
+        catch (err) {
             DBManager.DISCONNECT();
-            console.error(error.message)
-            return res.status(500).json({ message: { msgBody: 'Something went wrong', msgErroe: true, error } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
@@ -53,10 +56,11 @@ const reviewsController = {
                 cumulativeRating: newCumulativeRating
             })
 
-        } catch (error) {
+        } 
+        catch (err) {
             DBManager.DISCONNECT();
-            console.log(error.message);
-            return res.status(500).json({ message: { msgBody: 'Something went wrong', msgError: true } })
+            console.error(err.message);
+            next(serverErrMsg)
         }
     },
 
