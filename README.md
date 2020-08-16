@@ -1,4 +1,4 @@
-# online-shop-using-MERN-stack
+# online-shop-using-MERN-stack with Redux
 This is an eCommerce application using MERN stack along with redux.
 It's my second project using MERN stack.
 It's like a playground for me to try new stuff, feel free to see the code give me any review.
